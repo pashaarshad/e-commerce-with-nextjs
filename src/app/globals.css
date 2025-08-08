@@ -3,12 +3,6 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 html,
 body {
@@ -35,8 +29,46 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+header {
+  padding: 1rem;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--foreground);
+  margin: 2vw;
+  box-shadow: 0 4px 20px rgb(20, -50, 0);
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 0, 0.014);
+} 
+header main{
+  display: flex;
+  justify-content: space-around;
+}
+header ul {
+  display: flex;
+  gap: 2vw;
+  list-style: none;
+}
+header ul li {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+header ul li:hover {
+  color: #4CAF50;
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+header ul li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+header ul li:hover::after {
+  width: 100%;
 }
