@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+// import 'tailwindcss/tailwind.css';
 
 function TestingDummyJSON() {
   const [products, setProducts] = useState([]);
@@ -24,7 +25,7 @@ function TestingDummyJSON() {
   }, []);
 
   return (
-    <main className="p-4">
+    <main className="p-4" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' } }>
       <h1 className="text-2xl font-bold mb-4">Testing Dummy JSON</h1>
       <p className="mb-6">This is a page for displaying products from DummyJSON API.</p>
       
@@ -53,16 +54,7 @@ function TestingDummyJSON() {
       </div>
     </main>
   );
-  useEffect(() => {
-    // For debugging/console viewing purposes
-    fetch('https://dummyjson.com/products')
-      .then(res => res.json())
-      .then(console.log);
-      
-    fetch('https://dummyjson.com/products/search?q=phone')
-      .then(res => res.json())
-      .then(console.log);
-  }, []);
+  
 }
 
 export default TestingDummyJSON;
